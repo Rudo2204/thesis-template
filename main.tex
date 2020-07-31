@@ -22,6 +22,21 @@
 \usepackage{multirow} % Multirow for tables
 \usepackage{minted} % Code highlighting
 
+%----- CUSTOM FUN PACKGES -----
+%\usepackage{multido}
+%\usepackage{./custom_package/dirtree/dirtree}
+%\usepackage{pifont}
+%\newcommand{\cmark}{\ding{51}}
+%\newcommand{\xmark}{\ding{55}}
+
+% See: https://tex.stackexchange.com/questions/248451/how-to-create-multiple-dotted-lines
+%\newcommand{\Pointilles}[1]{%
+%  \par\nobreak
+%  \noindent\rule{0pt}{1.5\baselineskip}% Provides a larger gap between the preceding paragraph and the dots
+%  \multido{}{#1}{\noindent\makebox[\linewidth]{\dotfill}\endgraf}% ... dotted lines ...
+%  \bigskip% Gap between dots and next paragraph
+%}
+
 % Bibliography management: by default LaTeX uses Biblatex which werks (with an e)
 % but if you cite documents with non-ascii stuff in it (or want to customize bibiography)
 % then it's highly recommended to use biber backend
@@ -33,6 +48,18 @@
 %\setcounter{tocdepth}{4} % This will add subsubsection line to TOC
 \renewcommand{\thesubsubsection}{\alph{subsubsection})} % Use a) b) c) in subsubsection
 %\renewcommand{\arraystretch}{1.2} % More space between table lines
+
+%----- CUSTOM LISTINGS -----
+%% If you use listing
+%\renewcommand\listingscaption{Ví dụ}
+%\renewcommand\listoflistingscaption{Danh sách ví dụ}
+%\newminted[rustcode]{rust}{frame=lines, linenos, breaklines, breakanywhere, fontsize=\footnotesize} % format rust code
+%\newminted[ccode]{c}{frame=lines, linenos, breaklines, breakanywhere, fontsize=\footnotesize} % format rust code
+%% Add these to toc_tof_lot.tex
+%\clearpage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{\listoflistingscaption}
+%\listoflistings
 
 %----- SUB-SETTINGS PACKAGES AND GENERAL PAGES -----%
 \usetikzlibrary{calc} % For calculating space to draw stuff
