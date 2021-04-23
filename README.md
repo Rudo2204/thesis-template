@@ -25,15 +25,17 @@ If you want to use Travis CI you will need:
 
 ## How-to
 ### Test build the document locally
-1. Install the latex packages: `texlive-latex-extra, texlive-science, texlive-language-other, biber, latexmk, texlive-bibtex-extra, python-pygments`
+1. Install the latex packages: `texlive-latex-extra texlive-science texlive-lang-other biber latexmk texlive-bibtex-extra python3-pygments`
 2. Compile them with `latexmk -pdf -shell-escape -bibtex -synctex=1 -interaction=nonstopmode main.tex`
+
+**NOTE**: It may not compile the first time because of missing `dirtree.tex` error. If that is the case, compile interactively with `latexmk -pdf -shell-escape -bibtex -synctex=1 main.tex`, when it hits the error type `./custom_package/dirtree/dirtree`. Repeat until it comiles for the first time. Then after that you will be able to compile using `nonstopmode`.
 ### Use this template
 1. Fork or clone the repo and rewrite the thesis contents.
 2. Edit the information in the CI files marked with `TODO`, they will tell you what and how you edit them.
 3. Commit changes and push to github to kick off a `master` branch build to see if anything goes wrong.
 4. Generate an **annotated** tag to kick off build and deploy process with `git tag -a $TAG` and `git push origin $TAG`.
 
-### Depoloy options
+### Deploy options
 There are two options you can choose to deploy your built artifacts to Github release page of the repo.
 By default, this repo uses the first method of using Github Action to deploy artifacts.
 
